@@ -1,20 +1,15 @@
-﻿
+﻿using Microsoft.AspNetCore.Identity;
+using System.ComponentModel;
+
 namespace todo_server.Model
 {
-    using System.ComponentModel.DataAnnotations;
-
-    public class User
+    public class User : IdentityUser
     {
-        public int Id { get; set; }
+        public string FullName { get; set; }
 
-        [Required]
-        public string Username { get; set; }
+        public DateTime Birthday { get; set; }
 
-        [Required]
-        public string Password { get; set; }
+        public bool IsDeleted { get; set; }
 
-        [Required]
-        [EmailAddress]
-        public string Email { get; set; }
     }
 }

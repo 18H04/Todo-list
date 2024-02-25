@@ -3,7 +3,8 @@ namespace todo_server.Model
 {
     using System;
     using System.ComponentModel.DataAnnotations;
-    
+    using System.ComponentModel.DataAnnotations.Schema;
+
     public class Task
     {
         public int Id { get; set; }
@@ -19,9 +20,9 @@ namespace todo_server.Model
         public bool IsCompleted { get; set; }
 
         // Foreign key
-        public int UserId { get; set; }
+        public string UserId { get; set; }
 
-        // Navigation property
+        [ForeignKey("UserId")]
         public User User { get; set; }
     }
 }

@@ -24,13 +24,6 @@ public class TodoController : ControllerBase
         return await _context.Tasks.ToListAsync();
     }
 
-    // GET: /todo/users
-    [HttpGet("users")]
-    public async Task<ActionResult<IEnumerable<User>>> GetUsers()
-    {
-        return await _context.Users.ToListAsync();
-    }
-
     // GET: /todo/categories
     [HttpGet("categories")]
     public async Task<ActionResult<IEnumerable<Category>>> GetCategories()
